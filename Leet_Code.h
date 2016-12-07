@@ -26,5 +26,17 @@ vector<int> countBits(int num);
 */
 string reverseString(string s);
 
+/*371
+	Calculate the sum of two integers a and b, but you are not allowed to use the operator + and -
+*/
+int getSum(int a, int b);
+
+/*412
+	Write a program that outputs the string representation of numbers from 1 to n.
+	But for multiples of three it should output “Fizz” instead of the number and
+	for the multiples of five output “Buzz”.
+	For numbers which are multiples of both three and five output “FizzBuzz”.
+*/
+vector<string> fizzBuzz(int n);
 
 #endif /* LEET_CODE_H_ */
