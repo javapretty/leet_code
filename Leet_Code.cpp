@@ -7,6 +7,30 @@
 
 #include "Leet_Code.h"
 
+//136
+int singleNumber(vector<int>& nums) {
+	int num = 0;
+	for (int i = 0; i < (int)nums.size(); ++i) {
+		num ^= nums[i];
+	}
+	return num;
+}
+
+//258
+int addDigits(int num) {
+	if(num == 0) {
+		return 0;
+	}
+
+	int mod = num % 9;
+	if(mod == 0) {
+		return 9;
+	}
+	else {
+		return mod;
+	}
+}
+
 //338
 vector<int> countBits(int num) {
 	vector<int> vec(num+1, 0);

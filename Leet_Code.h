@@ -14,6 +14,22 @@
 
 using namespace std;
 
+/*136
+ Given an array of integers, every element appears twice except for one. Find that single one.
+	Note:
+	Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+*/
+int singleNumber(vector<int>& nums);
+
+/*258
+	Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.
+	For example:
+	Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has only one digit, return it.
+	Follow up:
+	Could you do it without any loop/recursion in O(1) runtime?
+*/
+int addDigits(int num);
+
 /*338
 	Given a non negative integer number num.
 	For every numbers i in the range 0 ≤ i ≤ num calculate the number

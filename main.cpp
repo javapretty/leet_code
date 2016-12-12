@@ -8,31 +8,45 @@
 #include "Leet_Code.h"
 
 int main() {
+	//136
+	cout << "-----------136-----------" << endl;
+	vector<int> vec_136;
+	for(int i = 0; i < 20; ++i) {
+		vec_136.push_back(i % 10);
+	}
+	vec_136.push_back(10);
+	cout << singleNumber(vec_136) << endl;
+
+	//258
+	cout << "-----------258-----------" << endl;
+	for(int i = 901; i <= 909; ++i) {
+		cout << addDigits(i) << "\t";
+	}
+	cout << endl;
+
 	//338
-	cout << "338 problem begin" << endl;
+	cout << "-----------338-----------" << endl;
 	vector<int> vec_338 = countBits(8);
 	for(vector<int>::iterator iter = vec_338.begin(); iter != vec_338.end(); ++iter) {
 		cout << *iter << "\t";
 	}
-	cout << endl << "338 problem end" << endl;
+	cout << endl;
 
 	//344
-	cout << "344 problem begin" << endl;
+	cout << "-----------344-----------" << endl;
 	cout << reverseString("qwertyuiop") << endl;
-	cout << "344 problem end" << endl;
 
 	//371
-	cout << "371 problem begin" << endl;
+	cout << "-----------371-----------" << endl;
 	cout << getSum(10, 101) << endl;
-	cout << "371 problem end" << endl;
 
 	//412
-	cout << "412 problem begin" << endl;
+	cout << "-----------412-----------" << endl;
 	vector<string> vec_412 = fizzBuzz(15);
 	for(vector<string>::iterator iter = vec_412.begin(); iter != vec_412.end(); ++iter) {
 		cout << *iter << "\t";
 	}
-	cout << endl << "412 problem end" << endl;
+	cout << endl;
 	return 0;
 }
 
