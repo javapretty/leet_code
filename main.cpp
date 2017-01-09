@@ -47,6 +47,10 @@ int main() {
 		cout << *iter << "\t";
 	}
 	cout << endl;
+
+	//461
+	cout << "-----------461-----------" << endl;
+	cout << hammingDistance(1, 4) << endl;
 	return 0;
 }
 

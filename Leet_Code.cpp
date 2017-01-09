@@ -78,3 +78,35 @@ vector<string> fizzBuzz(int n) {
 	return vec;
 }
 
+//461
+int hammingDistance(int x, int y) {
+	int dist = 0;
+	unsigned int val = x ^ y;
+
+  //Count the number of bits set
+	while (val != 0) {
+		//A bit is set, so increment the count and clear the bit
+		dist++;
+		val &= val - 1;
+    }
+
+	//Return the number of differing bits
+	return dist;
+}
+
+//463
+int islandPerimeter(vector<vector<int>>& grid) {
+	int count=0, repeat=0;
+	for(int i=0;i<(int)grid.size();i++) {
+		for(int j=0; j<(int)grid[i].size();j++) {
+			if(grid[i][j]==1) {
+				count ++;
+				//如果上面是1，重复次数加1
+				if(i!=0 && grid[i-1][j] == 1) repeat++;
+				//如果左边是1，重复次数加1
+				if(j!=0 && grid[i][j-1] == 1) repeat++;
+			}
+		}
+	}
+	return 4*count-repeat*2;
+}
