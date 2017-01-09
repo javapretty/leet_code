@@ -19,8 +19,20 @@ int main() {
 
 	//231
 	cout << "-----------231-----------" << endl;
-	for(int i = 1; i <= 8; ++i) {
+	for(int i = 1; i <= 9; ++i) {
 		cout << isPowerOfTwo(i) << "\t";
+	}
+	cout << endl;
+	//326
+	cout << "-----------326-----------" << endl;
+	for(int i = 1; i <= 9; ++i) {
+		cout << isPowerOfThree(i) << "\t";
+	}
+	cout << endl;
+	//342
+	cout << "-----------342-----------" << endl;
+	for(int i = 1; i <= 9; ++i) {
+		cout << isPowerOfFour(i) << "\t";
 	}
 	cout << endl;
 

@@ -26,6 +26,21 @@ bool isPowerOfTwo(int n) {
 	return n > 0 && !(n&(n-1));
 }
 
+//326
+bool isPowerOfThree(int n) {
+	//if(n == 0) return false;
+	//double x = log10(n) / log10(3);
+	//return floor(x) == x;
+  if (n <= 0) return false;
+  //3^19=1162261467, 3^20 = 3486784401 > MaxInt32
+  return 1162261467 % n == 0;
+}
+
+//342
+bool isPowerOfFour(int num) {
+	return num > 0 && (num & (num - 1)) == 0 && (num - 1) % 3 == 0;
+}
+
 //258
 int addDigits(int num) {
 	if(num == 0) {

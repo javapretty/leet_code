@@ -38,6 +38,20 @@ int singleNumber(vector<int>& nums);
 */
 bool isPowerOfTwo(int n);
 
+/*326. Power of Three
+	Given an integer, write a function to determine if it is a power of three.
+Follow up: Could you solve it without loops/recursion?
+*/
+bool isPowerOfThree(int n);
+
+/*342. Power of Four
+	Given an integer (signed 32 bits), write a function to check whether it is a power of 4.
+Example:
+	Given num = 16, return true. Given num = 5, return false.
+Follow up: Could you solve it without loops/recursion?
+*/
+bool isPowerOfFour(int num);
+
 /*258. Add Digits
 	Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.
 	For example:
