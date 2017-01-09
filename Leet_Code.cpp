@@ -7,6 +7,11 @@
 
 #include "Leet_Code.h"
 
+//104
+int maxDepth(TreeNode* root) {
+	 return root == NULL ? 0 : max(maxDepth(root -> left), maxDepth(root -> right)) + 1;
+}
+
 //136
 int singleNumber(vector<int>& nums) {
 	int num = 0;
@@ -14,6 +19,11 @@ int singleNumber(vector<int>& nums) {
 		num ^= nums[i];
 	}
 	return num;
+}
+
+//231
+bool isPowerOfTwo(int n) {
+	return n > 0 && !(n&(n-1));
 }
 
 //258
@@ -58,6 +68,22 @@ int getSum(int a, int b) {
 	return r1 == 0 ? r2 : getSum(r2, r1 << 1);
 }
 
+//389
+char findTheDifference(string s, string t) {
+	//Initialize variables to store sum of ASCII codes for each string
+	int charCodeS = 0, charCodeT = 0;
+	// Iterate through both strings and char codes
+	for (int i = 0; i < (int)s.length(); ++i) {
+		charCodeS += (int)s[i];
+	}
+	for (int i = 0; i < (int)t.length(); ++i) {
+		charCodeT += (int)t[i];
+	}
+
+	// Return the difference between 2 strings as char
+	return (char)(charCodeT - charCodeS);
+}
+
 //412
 vector<string> fizzBuzz(int n) {
 	vector<string> vec;
@@ -76,6 +102,23 @@ vector<string> fizzBuzz(int n) {
 		}
 	}
 	return vec;
+}
+
+//448 The basic idea here is to label all appeared numbers in the array.
+//Since we don't want to introduce extra space and given all numbers are positive(from 1 to n),
+//negate the value in the corresponding position is one choice. Ex, for input like [1, 2, 2], after the first sweep, it becomes [-1, -2, 2]. At position index=2,
+//there is a positive value, which means it corresponding value 3 is not showing.
+vector<int> findDisappearedNumbers(vector<int>& nums) {
+	int len = nums.size();
+	for(int i=0; i<len; i++) {
+		int m = abs(nums[i])-1; // index start from 0
+    nums[m] = nums[m]>0 ? -nums[m] : nums[m];
+    }
+  vector<int> res;
+  	  for(int i = 0; i<len; i++) {
+  		  if(nums[i] > 0) res.push_back(i+1);
+  	  }
+  return res;
 }
 
 //461

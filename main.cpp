@@ -17,6 +17,13 @@ int main() {
 	vec_136.push_back(10);
 	cout << singleNumber(vec_136) << endl;
 
+	//231
+	cout << "-----------231-----------" << endl;
+	for(int i = 1; i <= 8; ++i) {
+		cout << isPowerOfTwo(i) << "\t";
+	}
+	cout << endl;
+
 	//258
 	cout << "-----------258-----------" << endl;
 	for(int i = 901; i <= 909; ++i) {
@@ -40,10 +47,28 @@ int main() {
 	cout << "-----------371-----------" << endl;
 	cout << getSum(10, 101) << endl;
 
+	//389
+	cout << "-----------389-----------" << endl;
+	cout << findTheDifference("abcd", "abecd") << endl;
+
 	//412
 	cout << "-----------412-----------" << endl;
 	vector<string> vec_412 = fizzBuzz(15);
 	for(vector<string>::iterator iter = vec_412.begin(); iter != vec_412.end(); ++iter) {
+		cout << *iter << "\t";
+	}
+	cout << endl;
+
+	//448
+	cout << "-----------448-----------" << endl;
+	vector<int> vec_448;
+	vec_448.push_back(5);
+	vec_448.push_back(5);
+	vec_448.push_back(1);
+	vec_448.push_back(3);
+	vec_448.push_back(3);
+	vector<int> vec_448_res = findDisappearedNumbers(vec_448);
+	for(vector<int>::iterator iter = vec_448_res.begin(); iter != vec_448_res.end(); ++iter) {
 		cout << *iter << "\t";
 	}
 	cout << endl;
