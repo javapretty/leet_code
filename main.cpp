@@ -5,7 +5,9 @@
  *      Author: zhangyalei
  */
 
-#include "Leet_Code.h"
+#include "Easy_Code.h"
+#include "Medium_Code.h"
+#include "Hard_Code.h"
 
 int main() {
 	//136
@@ -40,6 +42,13 @@ int main() {
 	cout << "-----------258-----------" << endl;
 	for(int i = 901; i <= 909; ++i) {
 		cout << addDigits(i) << "\t";
+	}
+	cout << endl;
+
+	//292
+	cout << "-----------292-----------" << endl;
+	for(int i = 1; i <= 9; ++i) {
+		cout << canWinNim(i) << "\t";
 	}
 	cout << endl;
 

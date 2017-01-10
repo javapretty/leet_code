@@ -5,8 +5,8 @@
  *      Author: zhangyalei
  */
 
-#ifndef LEET_CODE_H_
-#define LEET_CODE_H_
+#ifndef EASY_CODE_H_
+#define EASY_CODE_H_
 
 #include <string>
 #include <vector>
@@ -25,6 +25,22 @@ struct TreeNode {
 	TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 int maxDepth(TreeNode* root);
+
+/*226.Invert Binary Tree
+	Invert a binary tree.
+		 4
+	   /   \
+	  2     7
+	 / \   / \
+	1   3 6   9
+	to
+		 4
+	   /   \
+	  7     2
+	 / \   / \
+	9   6 3   1
+*/
+TreeNode* invertTree(TreeNode* root);
 
 /*136. Single Number
 	Given an array of integers, every element appears twice except for one. Find that single one.
@@ -60,6 +76,15 @@ bool isPowerOfFour(int num);
 	Could you do it without any loop/recursion in O(1) runtime?
 */
 int addDigits(int num);
+
+/*292. Nim Game
+	You are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last stone will be the winner. You will take the first turn to remove the stones.
+	Both of you are very clever and have optimal strategies for the game. Write a function to determine whether you can win the game given the number of stones in the heap.
+	For example, if there are 4 stones in the heap, then you will never win the game: no matter 1, 2, or 3 stones you remove, the last stone will always be removed by your friend.
+Hint:
+	If there are 5 stones in the heap, could you figure out a way to remove the stones such that you will always be the winner?
+*/
+bool canWinNim(int n);
 
 /*338. Counting Bits
 	Given a non negative integer number num.
@@ -127,4 +152,4 @@ Answer: 16
 */
 int islandPerimeter(vector<vector<int>>& grid);
 
-#endif /* LEET_CODE_H_ */
+#endif /* EASY_CODE_H_ */

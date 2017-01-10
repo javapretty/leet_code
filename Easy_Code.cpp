@@ -5,11 +5,38 @@
  *      Author: zhangyalei
  */
 
-#include "Leet_Code.h"
+#include <stack>
+#include "Easy_Code.h"
 
 //104
 int maxDepth(TreeNode* root) {
 	 return root == NULL ? 0 : max(maxDepth(root -> left), maxDepth(root -> right)) + 1;
+}
+
+//226
+TreeNode* invertTree(TreeNode* root) {
+	//Recursive
+	//if (root) {
+	//	invertTree(root->left);
+	//	invertTree(root->right);
+	//	std::swap(root->left, root->right);
+	//}
+	//return root;
+
+	//Non-Recursive
+	stack<TreeNode*> stk;
+	stk.push(root);
+
+	while (!stk.empty()) {
+		TreeNode* p = stk.top();
+		stk.pop();
+		if (p) {
+			stk.push(p->left);
+			stk.push(p->right);
+			std::swap(p->left, p->right);
+		}
+	}
+	return root;
 }
 
 //136
@@ -54,6 +81,12 @@ int addDigits(int num) {
 	else {
 		return mod;
 	}
+}
+
+//292
+bool canWinNim(int n) {
+	//return n%4 ;
+	return n&3;
 }
 
 //338
