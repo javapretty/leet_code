@@ -14,6 +14,7 @@
 
 using namespace std;
 
-
+//测试用例
+int test_medium_code(void);
 
 #endif /* MEDIUM_CODE_H_ */

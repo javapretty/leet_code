@@ -7,4 +7,6 @@
 
 #include "Hard_Code.h"
 
-
+int test_hard_code(void) {
+	return 0;
+}

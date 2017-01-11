@@ -7,4 +7,6 @@
 
 #include "Medium_Code.h"
 
-
+int test_medium_code(void) {
+	return 0;
+}

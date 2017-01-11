@@ -14,6 +14,7 @@
 
 using namespace std;
 
-
+//测试用例
+int test_hard_code(void);
 
 #endif /* HARD_CODE_H_ */
