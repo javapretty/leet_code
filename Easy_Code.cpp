@@ -5,6 +5,8 @@
  *      Author: zhangyalei
  */
 
+#include <algorithm>
+#include <cmath>
 #include <stack>
 #include "Easy_Code.h"
 
@@ -169,6 +171,19 @@ vector<int> findDisappearedNumbers(vector<int>& nums) {
   return res;
 }
 
+//455
+//if child[res] can be content with cookie[i] ,then ++res,++i,else just ++i; finally, res is the number we want
+int findContentChildren(vector<int>& g, vector<int>& s) {
+	sort(g.begin(),g.end());
+	sort(s.begin(),s.end());
+	int res = 0;
+	for(int i=0;i<(int)s.size()&&res<(int)g.size();++i){
+		if(s[i]>=g[res])
+			++res;
+	 }
+	return res;
+}
+
 //461
 int hammingDistance(int x, int y) {
 	int dist = 0;
@@ -200,4 +215,12 @@ int islandPerimeter(vector<vector<int>>& grid) {
 		}
 	}
 	return 4*count-repeat*2;
+}
+
+//476
+//So ~num produces one's complement i.e flip every bit. But then some of bits have been flipped to
+//1( the upper bits) so then I just mask it to use only the first k-bits lower bits, where k is
+//the number of bits used in num, so the needed mask is 2^log(num) -1 == ((1 <<(int)log2(num))-1).
+int findComplement(int num) {
+	return ~num & ((1 <<(int)log2(num))-1);
 }

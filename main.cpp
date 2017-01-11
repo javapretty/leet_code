@@ -97,6 +97,14 @@ int main() {
 	//461
 	cout << "-----------461-----------" << endl;
 	cout << hammingDistance(1, 4) << endl;
+
+	//476
+	cout << "-----------476-----------" << endl;
+	for(int i = 1; i <= 9; ++i) {
+		cout << findComplement(i) << "\t";
+	}
+	cout << endl;
+
 	return 0;
 }
 
