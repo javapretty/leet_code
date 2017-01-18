@@ -10,9 +10,6 @@
 
 #include "Base_Define.h"
 
-//测试用例
-int test_hard_code(void);
-
 /*
 460. LFU Cache
 	Design and implement a data structure for Least Frequently Used (LFU) cache. It should support the following operations: get and put.
@@ -41,15 +38,9 @@ Example:
   */
 class LFUCache {
 public:
-	LFUCache(int capacity) {}
-
-	int get(int key) {
-		return 0;
-	}
-
-	void put(int key, int value) {
-
-	}
+	LFUCache(int capacity);
+	int get(int key);
+	void put(int key, int value);
 };
 
 #endif /* HARD_CODE_H_ */

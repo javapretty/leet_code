@@ -12,6 +12,8 @@
 #include <cmath>
 #include <stack>
 #include <string>
+#include <unordered_map>
+#include <unordered_set>
 #include <vector>
 #include <iostream>
 
@@ -29,5 +31,10 @@ struct TreeNode {
 	TreeNode *right;
 	TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
+
+//测试用例
+int test_easy_code(void);
+int test_medium_code(void);
+int test_hard_code(void);
 
 #endif /* BASE_DEFINE_H_ */

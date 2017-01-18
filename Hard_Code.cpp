@@ -7,6 +7,15 @@
 
 #include "Hard_Code.h"
 
-int test_hard_code(void) {
+//460
+LFUCache::LFUCache(int capacity) {
+
+}
+
+int LFUCache::get(int key) {
 	return 0;
+}
+
+void LFUCache::put(int key, int value) {
+
 }

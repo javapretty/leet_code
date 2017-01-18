@@ -10,9 +10,6 @@
 
 #include "Base_Define.h"
 
-//测试用例
-int test_medium_code(void);
-
 /*388. Longest Absolute File Path
 	The string "dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext" represents:
 	dir

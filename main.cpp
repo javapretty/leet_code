@@ -5,9 +5,7 @@
  *      Author: zhangyalei
  */
 
-#include "Easy_Code.h"
-#include "Medium_Code.h"
-#include "Hard_Code.h"
+#include "Base_Define.h"
 
 int main() {
 	test_easy_code();

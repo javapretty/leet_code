@@ -10,9 +10,6 @@
 
 #include "Base_Define.h"
 
-//测试用例
-int test_easy_code(void);
-
 /*
 100. Same Tree
 	Given two binary trees, write a function to check if they are equal or not.

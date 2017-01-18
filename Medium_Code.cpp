@@ -7,10 +7,6 @@
 
 #include "Medium_Code.h"
 
-int test_medium_code(void) {
-	return 0;
-}
-
 //388
 int lengthLongestPath(string input) {
 	return 0;
