@@ -274,7 +274,13 @@ int findContentChildren(vector<int>& g, vector<int>& s) {
 
 //458
 int poorPigs(int buckets, int minutesToDie, int minutesToTest) {
-	return 0;
+	// need t round to test
+	// for t round we can use (t + 1) as base to express buckets
+	// for t = 4, 1000 = 5 ^ 6, 0, 1, 2, 3, 4 can test t round
+	//  (t + 1) ^ ans = buckets
+	int t = (minutesToTest - 1) / minutesToDie + 1;
+	if (buckets == 1) return 0;
+	return log(buckets - 1) / log(t + 1) + 1;
 }
 
 //461
@@ -320,5 +326,12 @@ int findComplement(int num) {
 
 //485
 int findMaxConsecutiveOnes(vector<int>& nums) {
-	return 0;
+	int count = 0, max = 0;
+	for (int i = 0; i < (int)nums.size(); ++i){
+		if (nums[i]){
+			if (++count > max) max = count;
+		}
+		else count = 0;
+	}
+	return max;
 }

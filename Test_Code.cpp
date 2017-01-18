@@ -115,6 +115,16 @@ int test_easy_code(void) {
 	}
 	cout << endl;
 
+	//485
+	cout << "-----------485-----------" << endl;
+	vector<int> vec_485;
+	vec_485.push_back(1);
+	vec_485.push_back(0);
+	vec_485.push_back(1);
+	vec_485.push_back(1);
+	vec_485.push_back(1);
+	cout << findMaxConsecutiveOnes(vec_485) << endl;
+
 	cout << "---------------test easy code end-----------------" << endl;
 	return 0;
 }
