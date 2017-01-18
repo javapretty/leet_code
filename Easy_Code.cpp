@@ -192,7 +192,13 @@ char findTheDifference(string s, string t) {
 
 //404
 int sumOfLeftLeaves(TreeNode* root) {
-	return 0;
+	if (!root) {
+		return 0;
+	}
+	if (root->left && !root->left->left && !root->left->right) {
+		return root->left->val + sumOfLeftLeaves(root->right);
+	}
+	return sumOfLeftLeaves(root->left) + sumOfLeftLeaves(root->right);
 }
 
 //412
@@ -233,8 +239,24 @@ vector<int> findDisappearedNumbers(vector<int>& nums) {
 }
 
 //453
+//Increasing n-1 elements by 1 is similar to decreasing 1 element by 1. So we need to make all the elements equal to the minimum element.
+//Initially we consider the first number as minimum. then when we encounter a number nums[i], if the number is less than the minimum so far, we add i*(mymin - nums[i) because all the previous numbers have been clipped by mymin already. so if we get a new minimum, we just have to add items upto current index multiplied by difference of the new min to the previous min.
+//Otherwise we just add the difference to the sum.
 int minMoves(vector<int>& nums) {
-	return 0;
+	int sum = 0, i, len = nums.size();
+	if (len <= 1) return 0;
+	int mymin = nums[0];
+
+	for(i=1;i<len;i++) {
+		if (mymin > nums[i]){
+			sum += i*(mymin - nums[i]);
+			mymin = nums[i];
+		} else {
+			sum += nums[i] - mymin;
+		}
+	}
+
+	return sum;
 }
 
 //455
