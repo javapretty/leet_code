@@ -15,5 +15,3 @@ int main() {
 	test_hard_code();
 	return 0;
 }
-
-

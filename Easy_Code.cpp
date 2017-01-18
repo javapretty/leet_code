@@ -5,9 +5,6 @@
  *      Author: zhangyalei
  */
 
-#include <algorithm>
-#include <cmath>
-#include <stack>
 #include "Easy_Code.h"
 
 int test_easy_code(void) {
@@ -112,6 +109,12 @@ int test_easy_code(void) {
 	return 0;
 }
 
+//100
+bool isSameTree(TreeNode* p, TreeNode* q) {
+	if (p == NULL || q == NULL) return (p == q);
+	return (p->val == q->val && isSameTree(p->left, q->left) && isSameTree(p->right, q->right));
+}
+
 //104
 int maxDepth(TreeNode* root) {
 	 return root == NULL ? 0 : max(maxDepth(root -> left), maxDepth(root -> right)) + 1;
@@ -187,6 +190,13 @@ int addDigits(int num) {
 	}
 }
 
+//237
+void deleteNode(ListNode* node) {
+	ListNode* next = node->next;
+	*node = *next;
+	delete next;
+}
+
 //283
 void moveZeroes(vector<int>& nums) {
   for (int i = 0, j = 0; i < (int)nums.size(); i++)  {
@@ -222,6 +232,11 @@ string reverseString(string s) {
 	return s;
 }
 
+//349
+vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+	return vector<int>();
+}
+
 //371
 int getSum(int a, int b) {
 	int r1 = a & b, r2 = a ^ b;
@@ -239,6 +254,11 @@ bool canConstruct(string ransomNote, string magazine) {
 	return true;
 }
 
+//387
+int firstUniqChar(string s) {
+	return 0;
+}
+
 //389
 char findTheDifference(string s, string t) {
 	//Initialize variables to store sum of ASCII codes for each string
@@ -253,6 +273,11 @@ char findTheDifference(string s, string t) {
 
 	// Return the difference between 2 strings as char
 	return (char)(charCodeT - charCodeS);
+}
+
+//404
+int sumOfLeftLeaves(TreeNode* root) {
+	return 0;
 }
 
 //412
@@ -292,6 +317,11 @@ vector<int> findDisappearedNumbers(vector<int>& nums) {
   return res;
 }
 
+//453
+int minMoves(vector<int>& nums) {
+	return 0;
+}
+
 //455
 //if child[res] can be content with cookie[i] ,then ++res,++i,else just ++i; finally, res is the number we want
 int findContentChildren(vector<int>& g, vector<int>& s) {
@@ -303,6 +333,11 @@ int findContentChildren(vector<int>& g, vector<int>& s) {
 			++res;
 	 }
 	return res;
+}
+
+//458
+int poorPigs(int buckets, int minutesToDie, int minutesToTest) {
+	return 0;
 }
 
 //461
@@ -344,4 +379,9 @@ int islandPerimeter(vector<vector<int>>& grid) {
 //the number of bits used in num, so the needed mask is 2^log(num) -1 == ((1 <<(int)log2(num))-1).
 int findComplement(int num) {
 	return ~num & ((1 <<(int)log2(num))-1);
+}
+
+//485
+int findMaxConsecutiveOnes(vector<int>& nums) {
+	return 0;
 }
