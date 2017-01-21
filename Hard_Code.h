@@ -27,6 +27,13 @@ public:
 	LRUCache(int capacity);
 	int get(int key);
 	void put(int key, int value);
+private:
+    // A list of (key, value) pairs
+    list<pair<int, int>> items;
+    // Map items to iterators (pointers) to list nodes
+    unordered_map<int, list<pair<int, int>>::iterator> cache;
+    // The capacity of the list
+    int capacity;
 };
 
 /*
@@ -60,6 +67,13 @@ public:
 	LFUCache(int capacity);
 	int get(int key);
 	void put(int key, int value);
+private:
+    int cap;
+    int size;
+    int minFreq;
+    unordered_map<int, pair<int, int>> m; //key to {value,freq};
+    unordered_map<int, list<int>::iterator> mIter; //key to list iterator;
+    unordered_map<int, list<int>>  fm;  //freq to key list;
 };
 
 #endif /* HARD_CODE_H_ */
