@@ -38,7 +38,35 @@ int lengthLongestPath(string input) {
 
 //433
 int minMutation(string start, string end, vector<string>& bank) {
-	return 0;
+	unordered_set<string> dict(bank.begin(), bank.end());
+	if (!dict.count(end)) return -1;
+
+	unordered_set<string> bset, eset, *set1, *set2;
+	bset.insert(start);
+	eset.insert(end);
+	int step = 0, n = start.size();
+	while (!bset.empty() && !eset.empty()) {
+		if (bset.size() <= eset.size())
+			set1 = &bset, set2 = &eset;
+		else set2 = &bset, set1 = &eset;
+		unordered_set<string> tmp;
+		step ++;
+		for (auto itr = set1->begin(); itr != set1->end(); ++itr) {
+			for (int i = 0; i < n; ++i) {
+				string dna = *itr;
+				for (auto g : string("ATGC")) {
+					dna[i] = g;
+					if (set2->count(dna)) return step;
+					if (dict.count(dna)) {
+						tmp.insert(dna);
+						dict.erase(dna);
+					}
+				}
+			}
+		}
+		*set1 = tmp;
+	}
+	return -1;
 }
 
 //445
@@ -123,5 +151,18 @@ bool circularArrayLoop(vector<int>& nums) {
 
 //482
 string licenseKeyFormatting(string S, int K) {
-	return "";
+	string ret = "";
+	int n = 0;
+	for (int i = 0; i < (int)S.size(); ++ i) {
+		n += (S[i] != '-');
+	}
+
+	int u = 0;
+	for (int i = 0; i < n; ++ i){
+		while (S[u] == '-') ++ u;
+		ret += toupper(S[u]);
+		if (((n - i - 1) % K == 0) && (i != n - 1)) ret += '-';
+		u ++;
+	}
+	return ret;
 }
